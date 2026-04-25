@@ -18,7 +18,7 @@ https://tspplanner.streamlit.app/
 ## Sample Output
 
 ![Chatbot Output](output.png)
-[tsp output]_(output.png)
+![TSP Output](output.png)
 
 #  AI Chatbot System
 
