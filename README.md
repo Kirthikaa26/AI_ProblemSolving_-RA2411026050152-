@@ -20,68 +20,111 @@ https://tspplanner.streamlit.app/
 ![Chatbot Output](output.png)
 ![TSP Output](output.png)
 
-#  AI Chatbot System
 
-##  Description
+## Project 1: AI Chatbot System
+
+### Problem Statement
+
 Design and develop a simple AI chatbot that can interact with users and respond to basic queries using predefined rules. The system should simulate human-like conversation using pattern matching techniques.
 
+---
 ##  Features
 - Rule-based AI responses  
 - Fast interaction  
 - Beginner-friendly AI logic  
 - Streamlit web interface
-- 
-  Algorithm Used
-Rule-Based AI (Pattern Matching)
-Conditional Logic (if-else rules)
-Keyword Detection
 
-  Execution Steps
-User enters a message in the Streamlit interface.
-System converts input to lowercase.
-Input is matched with predefined keywords.
-Corresponding response is selected.
-Response is displayed instantly. 
 
-##  Sample Output
+---
+### Algorithm Used
 
-User: Hello  
+* Rule-Based AI (Pattern Matching)
+* Conditional Logic (if-else statements)
+* Keyword Matching
+
+---
+
+### Execution Steps
+
+1. User enters a message in the Streamlit interface.
+2. The input is converted to lowercase.
+3. System checks for matching keywords in predefined rules.
+4. Appropriate response is selected using conditional logic.
+5. The chatbot displays the response instantly.
+
+
+---
+
+### Sample Output
+
+```
+User: Hello
 Bot: Hi! How can I help you today?
 
-User: What is AI?  
+User: What is AI?
 Bot: AI is a branch of computer science that enables machines to simulate human intelligence.
+```
 
+---
 
-#  Traveling Salesman Problem (TSP) Solver
+## Project 2: Traveling Salesman Problem (TSP) Solver
 
-##  Description
-An optimization tool that finds the shortest possible route between multiple cities using brute-force permutation technique.
+###  Problem Statement
+
+Develop a system to find the shortest possible route that visits a set of cities exactly once and returns to the starting point. The solution should compute the optimal path based on distance.
+
+---
 
 ##  Features
 - User-defined city coordinates  
 - Finds optimal shortest path  
 - Calculates minimum distance  
-- Interactive Streamlit UI  
+- Interactive Streamlit UI 
 
-##  Sample Output
+###  Algorithm Used
 
+* Brute Force Approach
+* Permutations using itertools
+* Distance Calculation (Euclidean Distance)
+
+---
+
+###  Execution Steps
+
+1. User inputs city coordinates.
+2. System generates all possible permutations of city paths.
+3. Calculates total distance for each path.
+4. Compares distances to find the shortest route.
+5. Displays the optimal path and minimum distance.
+
+---
+
+###  Sample Output
+
+```
 Input Cities:
-City 1 → (0,0)  
-City 2 → (2,3)  
-City 3 → (5,4)  
-City 4 → (1,1)  
+City 1 → (0,0)
+City 2 → (2,3)
+City 3 → (5,4)
+City 4 → (1,1)
 
 Best Route:
-0 → 3 → 1 → 2  
+0 → 3 → 1 → 2
 
 Minimum Distance:
-8.76  
+8.76
+```
+
+---
 
 ##  Tech Stack
 
-Python   
-Streamlit 
-Rule-based AI logic  
-Brute-force optimization  
-itertools  
+* Python
+* Streamlit
+* Rule-Based Logic
+* Brute Force Optimization
+* itertools
 
+
+
+ 
