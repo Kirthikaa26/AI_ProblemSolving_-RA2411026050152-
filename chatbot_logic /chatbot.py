@@ -1,27 +1,52 @@
 import re
+import tkinter as tk
 
+# Rule base (pattern → response)
 rules = [
-    (r"parent\((.*),(.*)\)", "child(\\2,\\1)"),
-    (r"father\((.*),(.*)\)", "parent(\\1,\\2)"),
-    (r"mother\((.*),(.*)\)", "parent(\\1,\\2)")
+    ("hello(X)", "Hello X! How can I help you?"),
+    ("order(X)", "Your order for X has been placed."),
+    ("bye", "Goodbye!")
 ]
 
-def apply_rules(user_input):
+# Unification function
+def unify(pattern, user_input):
+    pattern = pattern.replace("(", "\\(").replace(")", "\\)")
+    pattern = pattern.replace("X", "(.*)")
+    
+    match = re.match(pattern, user_input)
+    if match:
+        return match.group(1) if match.groups() else None
+    return None
+
+# Find best match
+def get_response(user_input):
     for pattern, response in rules:
-        match = re.match(pattern, user_input)
-        if match:
-            res = response
-            for i in range(1, len(match.groups()) + 1):
-                res = res.replace(f"\\{i}", match.group(i))
-            return res
-    return "No rule matched"
+        result = unify(pattern, user_input)
+        if result is not None:
+            return pattern, response.replace("X", result)
+    return "No match", "Sorry, I didn't understand."
 
-print("AI Chatbot Started (type exit to stop)")
+# GUI
+def send():
+    user_input = entry.get()
+    pattern, reply = get_response(user_input)
 
-while True:
-    user = input("You: ")
+    output.delete("1.0", tk.END)
+    output.insert(tk.END, f"User Input: {user_input}\n")
+    output.insert(tk.END, f"Matched Rule: {pattern}\n")
+    output.insert(tk.END, f"Response: {reply}")
 
-    if user.lower() == "exit":
-        break
+# GUI window
+root = tk.Tk()
+root.title("AI Chatbot Logic Engine")
 
-    print("Bot:", apply_rules(user))
+entry = tk.Entry(root, width=40)
+entry.pack()
+
+button = tk.Button(root, text="Send", command=send)
+button.pack()
+
+output = tk.Text(root, height=10, width=50)
+output.pack()
+
+root.mainloop()
