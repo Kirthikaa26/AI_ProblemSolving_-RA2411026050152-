@@ -23,13 +23,25 @@ https://tspplanner.streamlit.app/
 #  AI Chatbot System
 
 ##  Description
-A simple rule-based AI chatbot that responds to user queries using predefined logic. It simulates basic human-like conversation using pattern matching techniques.
+Design and develop a simple AI chatbot that can interact with users and respond to basic queries using predefined rules. The system should simulate human-like conversation using pattern matching techniques.
 
 ##  Features
 - Rule-based AI responses  
 - Fast interaction  
 - Beginner-friendly AI logic  
-- Streamlit web interface  
+- Streamlit web interface
+- 
+  Algorithm Used
+Rule-Based AI (Pattern Matching)
+Conditional Logic (if-else rules)
+Keyword Detection
+
+  Execution Steps
+User enters a message in the Streamlit interface.
+System converts input to lowercase.
+Input is matched with predefined keywords.
+Corresponding response is selected.
+Response is displayed instantly. 
 
 ##  Sample Output
 
