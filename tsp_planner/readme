@@ -1,0 +1,12 @@
+# Tourist Travel Planner (TSP)
+
+## Description
+This project solves the Travelling Salesman Problem to find the shortest route.
+
+## Algorithm
+- Generate all permutations
+- Calculate total distance
+- Select minimum route
+
+## Output
+Optimal route and total distance
